@@ -21,6 +21,8 @@ workflows:
   build-then-test:
     jobs:
       - build
+      - hold:
+          type: approval
       - test:
           requires:
             - build
